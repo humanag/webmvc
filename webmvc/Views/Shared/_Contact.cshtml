@@ -1,0 +1,45 @@
+﻿@using webmvc.Extensions
+
+<div class="container mb-40">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 mb-sm-45 order-1 order-lg-2 mb-md-45">
+            <!--=======  contact page side content  =======-->
+
+            <div class="contact-page-side-content h-100">
+                <h3 class="contact-page-title">Liên Hệ Với Chúng Tôi</h3>
+                <p class="contact-page-message mb-30">
+                    Cửa nhôm - nhựa lõi thép Minh Hoàng DL
+                </p>
+                <!--=======  single contact block  =======-->
+
+                <div class="single-contact-block">
+                    <h4 class="text-danger"><i class="fa fa-fax mr-10"></i> Địa Chỉ</h4>
+                    <p>@ViewBag.SiteInfo.Address</p>
+                </div>
+
+                <!--=======  End of single contact block  =======-->
+                <!--=======  single contact block  =======-->
+
+                <div class="single-contact-block">
+                    <h4 class="text-danger"><i class="fa fa-phone mr-10"></i> Điện Thoại</h4>
+                    <p class="footer-text-block__content">
+                        <a href="tel:@ViewBag.SiteInfo.Phone">@Html.FormatPhoneNumber((string)ViewBag.SiteInfo.Phone)</a> -
+                        <a href="tel:@ViewBag.SiteInfo.Phone2">@Html.FormatPhoneNumber((string)ViewBag.SiteInfo.Phone2)</a>
+                    </p>
+                </div>
+
+                <!--=======  End of single contact block  =======-->
+                <!--=======  single contact block  =======-->
+                <!--=======  End of single contact block  =======-->
+            </div>
+
+            <!--=======  End of contact page side content  =======-->
+
+        </div>
+        <div class="col-lg-6 col-md-12 order-2 order-lg-1">
+            <div id="google-map" class="h-100">
+                <iframe class="w-100 h-100" src="https://maps.google.com/maps?q=Tr%E1%BA%A7n%20anh%20t%C3%B4ng%2C%20%C4%90%C6%B0%E1%BB%9Dng%20Nguy%C3%AAn%20T%E1%BB%AD%20L%E1%BB%B1c%2C%20Ph%C6%B0%E1%BB%9Dng%208%2C%20Th%C3%A0nh%20ph%E1%BB%91%20%C4%90%C3%A0%20L%E1%BA%A1t%2C%20L%C3%A2m%20%C4%90%E1%BB%93ng&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{2DEED34A-8A43-485A-B31D-AF5EE200F5F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMVC", "webmvc\WebMVC.csproj", "{005FAB4D-B402-4C41-98B7-0C787E07A548}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2DEED34A-8A43-485A-B31D-AF5EE200F5F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DEED34A-8A43-485A-B31D-AF5EE200F5F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DEED34A-8A43-485A-B31D-AF5EE200F5F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DEED34A-8A43-485A-B31D-AF5EE200F5F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{005FAB4D-B402-4C41-98B7-0C787E07A548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{005FAB4D-B402-4C41-98B7-0C787E07A548}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{005FAB4D-B402-4C41-98B7-0C787E07A548}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{005FAB4D-B402-4C41-98B7-0C787E07A548}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F94E637-C250-4B10-88D4-EE35DE6B77AB}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,25 @@
+﻿@using webmvc.Extensions
+
+@{
+    ViewBag.Title = "Trang chủ";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <!--=======  section title  =======-->
+
+            <div class="section-title-cus mb-20">
+                <span class="group-icon"><i class="fas fa-door-open"></i></span>
+                <h2>Liên Hệ</h2>
+            </div>
+
+            <!--=======  End of section title  =======-->
+        </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_Contact");
+}

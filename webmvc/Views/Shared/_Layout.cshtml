@@ -1,0 +1,288 @@
+﻿@using webmvc.Extensions
+@*@model MvcSiteMapProvider.Web.Html.Models.SiteMapPathHelperModel
+@using System.Web.Mvc.Html
+@using MvcSiteMapProvider.Web.Html.Models*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minh Hoàng Đà Lạt | @ViewBag.Title</title>
+    <!--
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    -->
+    <link href="~/App_Themes/alula/assets/css/vendors.css" rel="stylesheet">
+    <link href="/App_Themes/alula/assets/css/style.css" rel="stylesheet">
+    <link href="/App_Themes/alula/assets/plugins/magiczoom/magiczoomplus.css" rel="stylesheet">
+    <link href="/Content/fontawesome/css/all.min.css" rel="stylesheet">
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+</head>
+<body class="page-wrapper-light-green">
+
+    <!--====================  Header area ====================-->
+
+    <div class="header-area header-sticky">
+        <!--====================  Navigation top ====================-->
+
+        <div class="navigation-top">
+            <!--====================  navigation section ====================-->
+
+            <div class="navigation-top-topbar pt-10 pb-10">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-md-6 text-center text-md-left">
+
+
+                            <div class="text-muted follow-text font-weight-normal">
+                                <i class="fa fa-map-marker fa-fw"></i> @ViewBag.SiteInfo.Address
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6">
+                            <!--=======  header top dropdown container  =======-->
+
+                            <div class="headertop-dropdown-container justify-content-center justify-content-md-end">
+                                <div class="header-top-single-dropdown">
+                                    <a href="javascript:void(0)" class="active-dropdown-trigger" id="user-options">Tài Khoản <i class="ion-ios-arrow-down"></i></a>
+                                    <!--=======  dropdown menu items  =======-->
+
+                                    <div class="header-top-single-dropdown__dropdown-menu-items deactive-dropdown-menu extra-small-mobile-fix">
+                                        <ul>
+                                            <li><a href="/account/login">Đăng Nhập</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!--=======  End of dropdown menu items  =======-->
+                                </div>
+
+
+                            </div>
+
+                            <!--=======  End of header top dropdown container  =======-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--====================  End of navigation section  ====================-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!--====================  navigation top search ====================-->
+
+
+                        <div class="navigation-top-search-area pt-25 pb-25">
+                            <div class="row align-items-center">
+                                <div class="col-6 col-xl-2 col-lg-3 order-1 col-md-6 col-sm-5">
+                                    <!--=======  logo  =======-->
+
+                                    <div class="logo">
+                                        <a href="/">
+                                            <img src="/Content/images/logo-minh-hoang.png" class="img-fluid" alt="" style="height: 50px">
+                                        </a>
+                                    </div>
+
+                                    <!--=======  End of logo  =======-->
+                                </div>
+
+                                <div class="col-xl-5 offset-xl-1 col-lg-4 order-4 order-lg-2 mt-md-25 mt-sm-25">
+                                    <!--=======  search bar  =======-->
+
+                                    <div class="search-bar">
+                                        <form action="/products" method="get" role="form">
+                                            <form action="#">
+                                                <input type="search" name="q" placeholder="Tìm kiếm sản phẩm ...">
+                                                <button type="submit"> <i class="icon-search"></i></button>
+                                            </form>
+                                        </form>
+                                    </div>
+
+                                    <!--=======  End of search bar  =======-->
+                                </div>
+
+                                <div class="col-6 col-xl-4 col-lg-5 order-3 order-sm-2 order-lg-3 order-xs-3 col-md-4 col-sm-5 text-center text-sm-left mt-xs-25">
+                                    <!--=======  customer support text  =======-->
+
+                                    <div class="customer-support-text">
+                                        <div class="icon">
+                                            <img src="/Content/images/icon/support.png" class="img-fluid" alt="" width="35">
+                                        </div>
+
+                                        <div class="text">
+                                            <p> @Html.FormatPhoneNumber((String)ViewBag.SiteInfo.Phone)</p>
+                                            <p> @Html.FormatPhoneNumber((String)ViewBag.SiteInfo.Phone2)</p>
+                                        </div>
+                                    </div>
+
+                                    <!--=======  End of customer support text  =======-->
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <!--====================  End of navigation top search  ====================-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--====================  End of Navigation top  ====================-->
+        <!--====================  navigation menu ====================-->
+
+        <div class="navigation-menu-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- navigation section -->
+                        <div class="main-menu d-none d-lg-block">
+                            <nav>
+                                <ul>
+                                    <li id="nav-home">@Html.ActionLink("TRANG CHỦ", "Index", "Home")</li>
+                                    <li id="nav-product">@Html.ActionLink("SẢN PHẨM", "index", "products")</li>
+
+                                    <li id="nav-construction">@Html.ActionLink("CÔNG TRÌNH", "index", "blogs", new { cat = 1 }, null)</li>
+                                    <li id="nav-blog">@Html.ActionLink("BÁO GIÁ", "index", "blogs", new { cat = 2 }, null) </li>
+                                    <li id="nav-recruitment">@Html.ActionLink("TUYỂN DỤNG", "index", "blogs", new { cat = 3 }, null)</li>
+                                    <li id="nav-about">@Html.ActionLink("GIỚI THIỆU", "about", "home")</li>
+                                    <li id="nav-contact">@Html.ActionLink("LIÊN HỆ", "contact", "home")</li>
+                                </ul>
+                            </nav>
+
+                        </div>
+                        <!-- end of navigation section -->
+                        <!-- Mobile Menu -->
+                        <div class="mobile-menu-wrapper d-block d-lg-none pt-15">
+                            <div class="mobile-menu"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--====================  End of navigation menu  ====================-->
+    </div>
+
+    <!--====================  End of Header area  ====================-->
+    <!--End Main Header -->
+    <!--====================  breadcrumb area ====================-->
+    <div class="breadcrumb-area pt-10 pb-10 border-bottom mb-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!--=======  breadcrumb content  =======-->
+                    @Html.Raw(Html.BuildBreadcrumbNavigation())
+                    <!-- Html.MvcSiteMap().SiteMapPath() -->
+                    <!--=======  End of breadcrumb content  =======-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====================  End of breadcrumb area  ====================-->
+
+    <div class="container body-content page-section">
+        @RenderBody()
+
+        <!--====================  footer area ====================-->
+        <div class="footer-area border-top">
+            <div class="container">
+                <div class="row mb-40">
+                    <div class="col-lg-12">
+                        <div class="footer-content-wrapper pt-40">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6">
+                                    <!--=======  single footer widget  =======-->
+
+                                    <div class="single-footer-widget">
+                                        <div class="footer-logo mb-25">
+                                            <img src="/Content/images/logo-minh-hoang.png" class="img-fluid" alt="" style="height: 50px">
+                                        </div>
+
+                                        <div class="footer-text-block mb-10">
+                                            <h5 class="footer-text-block__title text-uppercase">Cửa nhôm - nhựa lõi thép Minh Hoàng DL</h5>
+                                        </div>
+
+                                        <div class="footer-text-block mb-10">
+                                            <h5 class="footer-text-block__title">Địa chỉ</h5>
+                                            <p class="footer-text-block__content">
+                                                @ViewBag.SiteInfo.FullAddress
+                                            </p>
+                                        </div>
+
+                                        <div class="footer-text-block mb-10">
+                                            <h5 class="footer-text-block__title">Điện thoại</h5>
+                                            <p class="footer-text-block__content">
+                                                <a class="font-weight-bold" href="tel:@ViewBag.SiteInfo.Phone"> @Html.FormatPhoneNumber((String)ViewBag.SiteInfo.Phone) </a> -
+                                                <a class="font-weight-bold" href="tel:@ViewBag.SiteInfo.Phone">@Html.FormatPhoneNumber((String)ViewBag.SiteInfo.Phone2)</a>
+                                            </p>
+                                        </div>
+
+                                        <div class="footer-social-icon-block">
+                                            <ul>
+                                                <li><a class="facebook-icon" href="http://www.facebook.com/"><i class="ion-social-facebook"></i></a></li>
+
+                                                <li><a class="youtube-icon" href="http://www.youtube.com/"><i class="ion-social-youtube"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <!--=======  End of single footer widget  =======-->
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 mt-md-30 mt-sm-30">
+                                    <!--=======  single footer widget  =======-->
+
+                                    <div class="asyncPartial single-footer-widget" data-url="/products/footercat">
+
+                                        <h5 class="montserrat-footer-widget-title">Danh Mục</h5>
+
+                                        <div class="footer-navigation">
+                                            <nav>
+                                                <ul>
+                                                    @foreach (var cat in ViewBag.Categories) {
+                                                        <li><a href="/products?cat=@cat.Id">@cat.Name</a></li>
+                                                    }
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+
+                                    <!--=======  End of single footer widget  =======-->
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 mt-sm-30">
+                                    <div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/hotline0931222775/" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=1105161409531317&amp;container_width=0&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fhotline0931222775%2F&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false"><span style="vertical-align: bottom; width: 340px; height: 196px;"><iframe name="f9442eb7c318a8" width="1000px" height="1000px" data-testid="fb:page Facebook Social Plugin" title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v4.0/plugins/page.php?adapt_container_width=true&amp;app_id=1105161409531317&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df17192129c266ac%26domain%3Dminhhoangdl.vn%26origin%3Dhttp%253A%252F%252Fminhhoangdl.vn%252Ff35810432141868%26relation%3Dparent.parent&amp;container_width=0&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fhotline0931222775%2F&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false" style="border: none; visibility: visible; width: 340px; height: 196px;" class=""></iframe></span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright-text-area">
+                            <div class="row align-items-center">
+                                <div class="col-md-12 text-center text-md-left mb-sm-15">
+                                    <div class="copyright-text">
+                                        <p>Copyright © 2020 MINH HOÀNG DL. All Right Reserved.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--====================  End of footer area  ====================-->
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
