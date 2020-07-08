@@ -1,4 +1,4 @@
-﻿@using webmvc.Extensions
+﻿@using WebMVC.Extensions
 @*@model MvcSiteMapProvider.Web.Html.Models.SiteMapPathHelperModel
 @using System.Web.Mvc.Html
 @using MvcSiteMapProvider.Web.Html.Models*@
@@ -10,8 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minh Hoàng Đà Lạt | @ViewBag.Title</title>
     <!--
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    Styles.Render("~/Content/css")
+    Scripts.Render("~/bundles/modernizr")
     -->
     <link href="~/App_Themes/alula/assets/css/vendors.css" rel="stylesheet">
     <link href="/App_Themes/alula/assets/css/style.css" rel="stylesheet">
@@ -182,104 +182,105 @@
         </div>
     </div>
     <!--====================  End of breadcrumb area  ====================-->
+    
+    <!-- Start Content -->
+    @RenderBody()
+    <!-- End Content -->
 
-    <div class="container body-content page-section">
-        @RenderBody()
+    <!--====================  footer area ====================-->
+    <div class="footer-area border-top">
+        <div class="container">
+            <div class="row mb-40">
+                <div class="col-lg-12">
+                    <div class="footer-content-wrapper pt-40">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <!--=======  single footer widget  =======-->
 
-        <!--====================  footer area ====================-->
-        <div class="footer-area border-top">
-            <div class="container">
-                <div class="row mb-40">
-                    <div class="col-lg-12">
-                        <div class="footer-content-wrapper pt-40">
-                            <div class="row">
-                                <div class="col-lg-4 col-md-6">
-                                    <!--=======  single footer widget  =======-->
-
-                                    <div class="single-footer-widget">
-                                        <div class="footer-logo mb-25">
-                                            <img src="/Content/images/logo-minh-hoang.png" class="img-fluid" alt="" style="height: 50px">
-                                        </div>
-
-                                        <div class="footer-text-block mb-10">
-                                            <h5 class="footer-text-block__title text-uppercase">Cửa nhôm - nhựa lõi thép Minh Hoàng DL</h5>
-                                        </div>
-
-                                        <div class="footer-text-block mb-10">
-                                            <h5 class="footer-text-block__title">Địa chỉ</h5>
-                                            <p class="footer-text-block__content">
-                                                @ViewBag.SiteInfo.FullAddress
-                                            </p>
-                                        </div>
-
-                                        <div class="footer-text-block mb-10">
-                                            <h5 class="footer-text-block__title">Điện thoại</h5>
-                                            <p class="footer-text-block__content">
-                                                <a class="font-weight-bold" href="tel:@ViewBag.SiteInfo.Phone"> @Html.FormatPhoneNumber((String)ViewBag.SiteInfo.Phone) </a> -
-                                                <a class="font-weight-bold" href="tel:@ViewBag.SiteInfo.Phone">@Html.FormatPhoneNumber((String)ViewBag.SiteInfo.Phone2)</a>
-                                            </p>
-                                        </div>
-
-                                        <div class="footer-social-icon-block">
-                                            <ul>
-                                                <li><a class="facebook-icon" href="http://www.facebook.com/"><i class="ion-social-facebook"></i></a></li>
-
-                                                <li><a class="youtube-icon" href="http://www.youtube.com/"><i class="ion-social-youtube"></i></a></li>
-                                            </ul>
-                                        </div>
+                                <div class="single-footer-widget">
+                                    <div class="footer-logo mb-25">
+                                        <img src="/Content/images/logo-minh-hoang.png" class="img-fluid" alt="" style="height: 50px">
                                     </div>
 
-                                    <!--=======  End of single footer widget  =======-->
-                                </div>
-
-                                <div class="col-lg-4 col-md-6 mt-md-30 mt-sm-30">
-                                    <!--=======  single footer widget  =======-->
-
-                                    <div class="asyncPartial single-footer-widget" data-url="/products/footercat">
-
-                                        <h5 class="montserrat-footer-widget-title">Danh Mục</h5>
-
-                                        <div class="footer-navigation">
-                                            <nav>
-                                                <ul>
-                                                    @foreach (var cat in ViewBag.Categories) {
-                                                        <li><a href="/products?cat=@cat.Id">@cat.Name</a></li>
-                                                    }
-                                                </ul>
-                                            </nav>
-                                        </div>
+                                    <div class="footer-text-block mb-10">
+                                        <h5 class="footer-text-block__title text-uppercase">Cửa nhôm - nhựa lõi thép Minh Hoàng DL</h5>
                                     </div>
 
-                                    <!--=======  End of single footer widget  =======-->
+                                    <div class="footer-text-block mb-10">
+                                        <h5 class="footer-text-block__title">Địa chỉ</h5>
+                                        <p class="footer-text-block__content">
+                                            @ViewBag.SiteInfo.FullAddress
+                                        </p>
+                                    </div>
+
+                                    <div class="footer-text-block mb-10">
+                                        <h5 class="footer-text-block__title">Điện thoại</h5>
+                                        <p class="footer-text-block__content">
+                                            <a class="font-weight-bold" href="tel:@ViewBag.SiteInfo.Phone"> @Html.FormatPhoneNumber((String)ViewBag.SiteInfo.Phone) </a> -
+                                            <a class="font-weight-bold" href="tel:@ViewBag.SiteInfo.Phone">@Html.FormatPhoneNumber((String)ViewBag.SiteInfo.Phone2)</a>
+                                        </p>
+                                    </div>
+
+                                    <div class="footer-social-icon-block">
+                                        <ul>
+                                            <li><a class="facebook-icon" href="http://www.facebook.com/"><i class="ion-social-facebook"></i></a></li>
+
+                                            <li><a class="youtube-icon" href="http://www.youtube.com/"><i class="ion-social-youtube"></i></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
 
-                                <div class="col-lg-4 col-md-6 mt-sm-30">
-                                    <div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/hotline0931222775/" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=1105161409531317&amp;container_width=0&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fhotline0931222775%2F&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false"><span style="vertical-align: bottom; width: 340px; height: 196px;"><iframe name="f9442eb7c318a8" width="1000px" height="1000px" data-testid="fb:page Facebook Social Plugin" title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v4.0/plugins/page.php?adapt_container_width=true&amp;app_id=1105161409531317&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df17192129c266ac%26domain%3Dminhhoangdl.vn%26origin%3Dhttp%253A%252F%252Fminhhoangdl.vn%252Ff35810432141868%26relation%3Dparent.parent&amp;container_width=0&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fhotline0931222775%2F&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false" style="border: none; visibility: visible; width: 340px; height: 196px;" class=""></iframe></span></div>
-                                </div>
+                                <!--=======  End of single footer widget  =======-->
                             </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="copyright-text-area">
-                            <div class="row align-items-center">
-                                <div class="col-md-12 text-center text-md-left mb-sm-15">
-                                    <div class="copyright-text">
-                                        <p>Copyright © 2020 MINH HOÀNG DL. All Right Reserved.</p>
+                            <div class="col-lg-4 col-md-6 mt-md-30 mt-sm-30">
+                                <!--=======  single footer widget  =======-->
+
+                                <div class="asyncPartial single-footer-widget" data-url="/products/footercat">
+
+                                    <h5 class="montserrat-footer-widget-title">Danh Mục</h5>
+
+                                    <div class="footer-navigation">
+                                        <nav>
+                                            <ul>
+                                                @foreach (var cat in ViewBag.Categories)
+                                                {
+                                                    <li><a href="/products?cat=@cat.Id">@cat.Name</a></li>
+                                                }
+                                            </ul>
+                                        </nav>
                                     </div>
                                 </div>
 
+                                <!--=======  End of single footer widget  =======-->
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 mt-sm-30">
+                                <div class="fb-page fb_iframe_widget" data-href="https://www.facebook.com/hotline0931222775/" data-tabs="" data-width="" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" fb-xfbml-state="rendered" fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=1105161409531317&amp;container_width=0&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fhotline0931222775%2F&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false"><span style="vertical-align: bottom; width: 340px; height: 196px;"><iframe name="f9442eb7c318a8" width="1000px" height="1000px" data-testid="fb:page Facebook Social Plugin" title="fb:page Facebook Social Plugin" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" src="https://www.facebook.com/v4.0/plugins/page.php?adapt_container_width=true&amp;app_id=1105161409531317&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df17192129c266ac%26domain%3Dminhhoangdl.vn%26origin%3Dhttp%253A%252F%252Fminhhoangdl.vn%252Ff35810432141868%26relation%3Dparent.parent&amp;container_width=0&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fhotline0931222775%2F&amp;locale=vi_VN&amp;sdk=joey&amp;show_facepile=true&amp;small_header=false" style="border: none; visibility: visible; width: 340px; height: 196px;" class=""></iframe></span></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!--====================  End of footer area  ====================-->
 
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copyright-text-area">
+                        <div class="row align-items-center">
+                            <div class="col-md-12 text-center text-md-left mb-sm-15">
+                                <div class="copyright-text">
+                                    <p>Copyright © 2020 MINH HOÀNG DL. All Right Reserved.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <!--====================  End of footer area  ====================-->
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

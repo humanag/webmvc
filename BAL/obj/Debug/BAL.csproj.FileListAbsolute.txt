@@ -1,0 +1,14 @@
+D:\Project\NET\Test\MinhHoang\BAL\bin\Debug\BAL.dll
+D:\Project\NET\Test\MinhHoang\BAL\bin\Debug\BAL.pdb
+D:\Project\NET\Test\MinhHoang\BAL\bin\Debug\DAL.dll
+D:\Project\NET\Test\MinhHoang\BAL\bin\Debug\EntityFramework.dll
+D:\Project\NET\Test\MinhHoang\BAL\bin\Debug\DAL.pdb
+D:\Project\NET\Test\MinhHoang\BAL\bin\Debug\DAL.dll.config
+D:\Project\NET\Test\MinhHoang\BAL\bin\Debug\EntityFramework.xml
+D:\Project\NET\Test\MinhHoang\BAL\obj\Debug\BAL.csprojAssemblyReference.cache
+D:\Project\NET\Test\MinhHoang\BAL\obj\Debug\BAL.csproj.CoreCompileInputs.cache
+D:\Project\NET\Test\MinhHoang\BAL\obj\Debug\BAL.csproj.CopyComplete
+D:\Project\NET\Test\MinhHoang\BAL\obj\Debug\BAL.dll
+D:\Project\NET\Test\MinhHoang\BAL\obj\Debug\BAL.pdb
+D:\Project\NET\Test\MinhHoang\BAL\bin\Debug\AutoMapper.dll
+D:\Project\NET\Test\MinhHoang\BAL\bin\Debug\AutoMapper.xml

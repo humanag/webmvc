@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 
-namespace webmvc.Extensions
+namespace WebMVC.Extensions
 {
     public static class StringExtensions
     {

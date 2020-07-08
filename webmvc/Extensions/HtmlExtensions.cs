@@ -3,7 +3,7 @@ using System.Web.Mvc;
 using System.Web.Mvc.Html;
 using System.Web.WebPages;
 
-namespace webmvc.Extensions
+namespace WebMVC.Extensions
 {
     public static class HtmlExtensions
     {

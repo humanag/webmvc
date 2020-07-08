@@ -1,13 +1,18 @@
-﻿using System;
+﻿using BAL.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace webmvc.Controllers
+namespace WebMVC.Controllers
 {
     public class HomeController : BaseController
     {
+        public HomeController(ICategoryService category, IHomeService homeService) : base(category, homeService)
+        {
+        }
+
         public ActionResult Index()
         {
             return View();

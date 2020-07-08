@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace webmvc.Areas.Admin.Controllers
+namespace WebMVC.Areas.Admin.Controllers
 {
     public class LoginController : Controller
     {

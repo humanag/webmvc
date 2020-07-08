@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace webmvc.Areas.Admin
+namespace WebMVC.Areas.Admin
 {
     public class AdminAreaRegistration : AreaRegistration 
     {
@@ -17,7 +17,7 @@ namespace webmvc.Areas.Admin
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
-                new {Controller = "Login",  action = "Index", id = UrlParameter.Optional }
+                new { action = "Index", id = UrlParameter.Optional }
             );
         }
     }

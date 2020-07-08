@@ -1,27 +1,297 @@
-﻿@model IEnumerable<webmvc.Models.ProductModels>
+﻿@model IEnumerable<BAL.Domain.ProductDto>
 
 @{
     ViewBag.Title = "SẢN PHẨM";
 }
 
-<h2>Sản phẩm</h2>
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="side-bar">
+                <div class="list-group mb-40">
+                    <div class="list-group-item disabled list-group-title"><i class="fa fa-bars fa-fw"></i> Danh Mục Sản Phẩm</div>
+                    @foreach (var cat in ViewBag.Categories)
+                    {
+                        <a href="/products?cat=@cat.Id" class="list-group-item list-group-item-action "><i class="fa fa-angle-right fa-fw"></i> @cat.Name (@cat.ProductCount)</a>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="posts blog mb-5">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <a href="/products/@item.Meta" class="h-100 w-100">
+                                <div class="card card-product h-100 shadow border-0">
+                                    <img class="card-img-top" src="@item.Image">
+                                    <div class="card-body d-flex flex-column justify-content-between">
+                                        <div>
+                                            <h5 class="card-title">@item.Name</h5>
+                                            <span class="text-muted small d-block">@item.CategoryId</span>
+                                        </div>
+                                        <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    }
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="/products/cua-truot-mo-xep-nhom-xingfa-21" class="h-100 w-100">
+                            <div class="card card-product h-100 shadow border-0">
+                                <img class="card-img-top" src="/Upload/products/637026151708068175_1505643784_nxg5.jpg">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">CỬA TRƯỢT MỞ XẾP NHÔM XINGFA</h5>
+                                        <span class="text-muted small d-block">Cửa nhôm Xingfa nhập Quảng Đông</span>
+                                    </div>
+                                    <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="/products/cua-di-mo-quay-nhom-pma-22" class="h-100 w-100">
+                            <div class="card card-product h-100 shadow border-0">
+                                <img class="card-img-top" src="/Upload/products/637026277973849395_cua-di-mo-quay-nhom-pma.jpg">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">CỬA ĐI MỞ QUAY NHÔM PMA</h5>
+                                        <span class="text-muted small d-block">Cửa nhôm PMA</span>
+                                    </div>
+                                    <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="/products/cau-thang-kinh-cuong-luc-khong-tru-23" class="h-100 w-100">
+                            <div class="card card-product h-100 shadow border-0">
+                                <img class="card-img-top" src="/Upload/products/637026285552443251_cau-thang-kinh-1-1483762336465.jpg">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">CẦU THANG KÍNH CƯỜNG LỰC KHÔNG TRỤ</h5>
+                                        <span class="text-muted small d-block">Cầu thang kính</span>
+                                    </div>
+                                    <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="/products/vach-kinh-phong-hop-24" class="h-100 w-100">
+                            <div class="card card-product h-100 shadow border-0">
+                                <img class="card-img-top" src="/Upload/products/637027096871851391_pic-Produ_636568130085537951_HasThumb.jpg">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">VÁCH KÍNH PHÒNG HỌP</h5>
+                                        <span class="text-muted small d-block">Vách kính</span>
+                                    </div>
+                                    <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="/products/vach-kinh-nha-tam-25" class="h-100 w-100">
+                            <div class="card card-product h-100 shadow border-0">
+                                <img class="card-img-top" src="/Upload/products/637027118472163755_Fendi-FKP-1X2.jpg">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">VÁCH KÍNH NHÀ TẮM</h5>
+                                        <span class="text-muted small d-block">Vách kính tắm </span>
+                                    </div>
+                                    <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="/products/lan-can-kinh-ban-cong-26" class="h-100 w-100">
+                            <div class="card card-product h-100 shadow border-0">
+                                <img class="card-img-top" src="/Upload/products/637027145878413730_224212baoxaydung_image001.jpg">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">LAN CAN KÍNH BAN CÔNG</h5>
+                                        <span class="text-muted small d-block">Lan can kính</span>
+                                    </div>
+                                    <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="/products/cua-nhua-mo-truot-27" class="h-100 w-100">
+                            <div class="card card-product h-100 shadow border-0">
+                                <img class="card-img-top" src="/Upload/products/637039923589126296_cua-nhua-he-cua-di-mo-truot03211.jpg">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">CỬA NHỰA MỞ TRƯỢT</h5>
+                                        <span class="text-muted small d-block">Cửa nhựa lõi thép</span>
+                                    </div>
+                                    <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="/products/vach-kinh-nhua-28" class="h-100 w-100">
+                            <div class="card card-product h-100 shadow border-0">
+                                <img class="card-img-top" src="/Upload/products/637039923388344986_vách kính nhựa 2.jpg">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">VÁCH KÍNH NHỰA</h5>
+                                        <span class="text-muted small d-block">Vách kính</span>
+                                    </div>
+                                    <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="/products/vach-kinh-nhom-29" class="h-100 w-100">
+                            <div class="card card-product h-100 shadow border-0">
+                                <img class="card-img-top" src="/Upload/products/637039923264907538_vách kính nhôm 1.jpg">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">VÁCH KÍNH NHÔM</h5>
+                                        <span class="text-muted small d-block">Vách kính</span>
+                                    </div>
+                                    <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="/products/lan-can-kinh-cau-thang-tru-go-30" class="h-100 w-100">
+                            <div class="card card-product h-100 shadow border-0">
+                                <img class="card-img-top" src="/Upload/products/637039922996938774_cầu thang kính  trụ 1.jpg">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">LAN CAN KÍNH CẦU THANG TRỤ GỖ</h5>
+                                        <span class="text-muted small d-block">Cầu thang kính</span>
+                                    </div>
+                                    <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="/products/lan-can-kinh-cau-thang-tay-vin-go-31" class="h-100 w-100">
+                            <div class="card card-product h-100 shadow border-0">
+                                <img class="card-img-top" src="/Upload/products/637039922840063771_CẦU THANG KÍNH TAY VỊN GỖ 1.jpg">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">LAN CAN KÍNH CẦU THANG TAY VỊN GỖ</h5>
+                                        <span class="text-muted small d-block">Cầu thang kính</span>
+                                    </div>
+                                    <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="/products/cua-so-hat-32" class="h-100 w-100">
+                            <div class="card card-product h-100 shadow border-0">
+                                <img class="card-img-top" src="/Upload/products/637039922514907529_cua-mo-hat.jpg">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">CỬA SỔ HẤT</h5>
+                                        <span class="text-muted small d-block">Cửa nhựa lõi thép</span>
+                                    </div>
+                                    <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="/products/cua-di-mo-quay-nhom-xingfa-33" class="h-100 w-100">
+                            <div class="card card-product h-100 shadow border-0">
+                                <img class="card-img-top" src="/Upload/products/637039927127563747_1540888664_uu-diem-noi-bat-cua-cua-nhom-xin.jpg">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">CỬA ĐI MỞ QUAY NHÔM XINGFA</h5>
+                                        <span class="text-muted small d-block">Cửa nhôm Xingfa nhập Quảng Đông</span>
+                                    </div>
+                                    <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="/products/cua-mo-truot-nhom-xingfa-34" class="h-100 w-100">
+                            <div class="card card-product h-100 shadow border-0">
+                                <img class="card-img-top" src="/Upload/products/637039930400532511_793.jpg">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">CỬA MỞ TRƯỢT NHÔM XINGFA</h5>
+                                        <span class="text-muted small d-block">Cửa nhôm Xingfa nhập Quảng Đông</span>
+                                    </div>
+                                    <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="/products/cua-so-hat-nhom-xingfa-35" class="h-100 w-100">
+                            <div class="card card-product h-100 shadow border-0">
+                                <img class="card-img-top" src="/Upload/products/637039933165532459_CỬA SỔ HẤT 1.jpg">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">CỬA SỔ HẤT NHÔM XINGFA</h5>
+                                        <span class="text-muted small d-block">Cửa nhôm Xingfa nhập Quảng Đông</span>
+                                    </div>
+                                    <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="/products/cua-so-hat-nhom-pma-36" class="h-100 w-100">
+                            <div class="card card-product h-100 shadow border-0">
+                                <img class="card-img-top" src="/Upload/products/637040599613501236_CỬA SỔ HẤT 3.jpg">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">CỬA SỔ HẤT NHÔM PMA</h5>
+                                        <span class="text-muted small d-block">Cửa nhôm PMA</span>
+                                    </div>
+                                    <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="/products/cua-mo-truot-nhom-pma-37" class="h-100 w-100">
+                            <div class="card card-product h-100 shadow border-0">
+                                <img class="card-img-top" src="/Upload/products/637040600526782635_cua-4-canh-nhom-xingfa-Hoang-Nguyen.jpg">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">CỬA MỞ TRƯỢT NHÔM PMA</h5>
+                                        <span class="text-muted small d-block">Cửa nhôm PMA</span>
+                                    </div>
+                                    <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a href="/products/cua-luoi-chong-muoi-38" class="h-100 w-100">
+                            <div class="card card-product h-100 shadow border-0">
+                                <img class="card-img-top" src="/Upload/products/637163312128026994_cua-luoi-chong-muoi-dang-xep-9.jpg">
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <div>
+                                        <h5 class="card-title">Cửa lưới chống muỗi</h5>
+                                        <span class="text-muted small d-block">Cửa lưới chống muỗi</span>
+                                    </div>
+                                    <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
-</table>
+</div>
