@@ -26,7 +26,11 @@ namespace WebMVC.Controllers
         // GET: Product
         public ActionResult Index(long? cat)
         {
-            var products = _service.GetAll();
+            IEnumerable<ProductDto> products;
+            if (cat > 0)
+                products = _service.GetAll(x => x.CategoryId == cat);
+            else
+                products = _service.GetAll();
             return View(products);
         }
     }

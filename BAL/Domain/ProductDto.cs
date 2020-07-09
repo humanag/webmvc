@@ -6,7 +6,7 @@ namespace BAL.Domain
 
         public string Code { get; set; }
 
-        public string Meta { get; set; }
+        public string MetaTitle { get; set; }
 
         public string Description { get; set; }
 
@@ -17,5 +17,7 @@ namespace BAL.Domain
         public long? CategoryId { get; set; }
 
         public int? Views { get; set; }
+
+        public virtual CategorySmallDto Category { get; set; }
     }
 }

@@ -16,8 +16,8 @@ namespace DAL.Entity
         [StringLength(39)]
         public string Code { get; set; }
 
-        [StringLength(50)]
-        public string Meta { get; set; }
+        [StringLength(250)]
+        public string MetaTitle { get; set; }
 
         [StringLength(500)]
         public string Description { get; set; }

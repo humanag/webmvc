@@ -10,3 +10,7 @@ d:\Project\NET\Test\MinhHoang\DAL\obj\Release\DAL.csproj.CoreCompileInputs.cache
 d:\Project\NET\Test\MinhHoang\DAL\obj\Release\DAL.csproj.CopyComplete
 d:\Project\NET\Test\MinhHoang\DAL\obj\Release\DAL.dll
 d:\Project\NET\Test\MinhHoang\DAL\obj\Release\DAL.pdb
+d:\Project\NET\Test\MinhHoang\DAL\bin\Release\PagedList.dll
+d:\Project\NET\Test\MinhHoang\DAL\bin\Release\PagedList.Mvc.dll
+d:\Project\NET\Test\MinhHoang\DAL\bin\Release\PagedList.xml
+d:\Project\NET\Test\MinhHoang\DAL\bin\Release\PagedList.Mvc.xml

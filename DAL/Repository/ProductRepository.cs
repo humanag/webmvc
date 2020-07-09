@@ -27,7 +27,7 @@ namespace DAL.Repository
             item.Detail = entity.Detail;
             item.Image = entity.Image;
             item.IsNew = entity.IsNew;
-            item.Meta = entity.Meta;
+            item.MetaTitle = entity.MetaTitle;
             item.Name = entity.Name;
             item.Sort = entity.Sort;
             item.UpdateDate = item.UpdateDate;
