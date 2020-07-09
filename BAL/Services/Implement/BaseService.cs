@@ -38,9 +38,9 @@ namespace BAL.Services.Implement
             return Task.FromResult(res);
         }
 
-        public virtual IEnumerable<Tv> GetAll(int uid = 0) 
+        public virtual IEnumerable<Tv> GetAll(int page = 1, int pageSize = 20, int uid = 0) 
         {
-            var entities = _unitOfWork.GetRepository<Te>().GetAll(1, 20000, uid);
+            var entities = _unitOfWork.GetRepository<Te>().GetAll(page, pageSize, uid);
             return _mapper.Map<IEnumerable<Tv>>(source: entities);
         }
 
@@ -60,6 +60,19 @@ namespace BAL.Services.Implement
         {
             var entities = _unitOfWork.GetRepository<Te>().GetAll(predicate, uid);
             return _mapper.Map<IEnumerable<Tv>>(source: entities);
+        }
+
+        public Tv Get(object id, int uid = 0)
+        {
+
+            var entitie = _unitOfWork.GetRepository<Te>().Get(id, uid);
+            return _mapper.Map<Tv>(source: entitie);
+        }
+
+        public Tv Get(Func<Te, bool> predicate, int uid = 0)
+        {
+            var entitie = _unitOfWork.GetRepository<Te>().Get(predicate, uid);
+            return _mapper.Map<Tv>(source: entitie);
         }
     }
 }

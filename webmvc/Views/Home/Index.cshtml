@@ -162,35 +162,23 @@
 
                 <div class="posts blog mb-5">
                     <div class="row">
-                        <div class="col-md-6 col-lg-3 mb-4">
-                            <a href="/products/cua-luoi-chong-muoi-38" class="h-100 w-100">
-                                <div class="card card-product h-100 shadow border-0">
-                                    <img class="card-img-top" src="/Upload/products/637163312128026994_cua-luoi-chong-muoi-dang-xep-9.jpg">
-                                    <div class="card-body d-flex flex-column justify-content-between">
-                                        <div>
-                                            <h5 class="card-title">Cửa lưới chống muỗi</h5>
-                                            <span class="text-muted small d-block">Cửa lưới chống muỗi</span>
+                        @foreach (var product in ViewBag.ProductNew)
+                        {
+                            <div class="col-md-6 col-lg-3 mb-4">
+                                <a href="/products/@product.MetaTitle" class="h-100 w-100">
+                                    <div class="card card-product h-100 shadow border-0">
+                                        <img class="card-img-top" src="@product.Image">
+                                        <div class="card-body d-flex flex-column justify-content-between">
+                                            <div>
+                                                <h5 class="card-title">@product.Name</h5>
+                                                <span class="text-muted small d-block">@product.Category.Name</span>
+                                            </div>
+                                            <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
                                         </div>
-                                        <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
-                        
-                        <div class="col-md-6 col-lg-3 mb-4">
-                            <a href="/products/cua-di-mo-quay-5" class="h-100 w-100">
-                                <div class="card card-product h-100 shadow border-0">
-                                    <img class="card-img-top" src="/Upload/products/637026155533068734_Cua-di-4-cánh-mo-quay-Xingfa-10.jpg">
-                                    <div class="card-body d-flex flex-column justify-content-between">
-                                        <div>
-                                            <h5 class="card-title">CỬA ĐI MỞ QUAY</h5>
-                                            <span class="text-muted small d-block">Cửa nhựa lõi thép</span>
-                                        </div>
-                                        <span class="btn btn-outline-danger btn-block btn-sm mt-2">Xem Chi Tiết</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                                </a>
+                            </div>
+                        }
                     </div>
                 </div>
                 <!--=======  End of product double row slider wrapper  =======-->
@@ -367,82 +355,28 @@
                         ]">
                         <button class="slick-prev slick-arrow slick-disabled" aria-disabled="true" style=""><i class="ion-ios-arrow-left"></i></button><div class="slick-list draggable">
                             <div class="slick-track" style="opacity: 1; width: 1508px; transform: translate3d(0px, 0px, 0px);">
-                                <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 377px;">
-                                    <div>
-                                        <div class="slider-single-post h-100" style="width: 100%; display: inline-block;">
-                                            <div class="slider-single-post__image">
-                                                <a href="/blogs/bao-gia/bao-gia-cua-nhom-xingfa-va-phu-kien-di-kem-14" tabindex="0">
-                                                    <img src="/Upload/blogs/637163289875995769_ádasdasdas.jpg" class="img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="slider-single-post__content">
-                                                <h3 class="post-title"><a href="/blogs/bao-gia/bao-gia-cua-nhom-xingfa-va-phu-kien-di-kem-14" tabindex="0">Báo giá cửa nhôm Xingfa và phụ kiện đi kèm</a></h3>
-                                                <div class="text2-overflow-dot mb-10">-Công ty chúng tôi xin chân thành cảm ơn sự hợp tác của...</div>
-                                                <div class="post-meta">
+                                @foreach (var blog in ViewBag.Blogs) 
+                                {
+                                    <div class="slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" style="width: 377px;">
+                                        <div>
+                                            <div class="slider-single-post h-100" style="width: 100%; display: inline-block;">
+                                                <div class="slider-single-post__image">
+                                                    <a href="/blogs/@blog.Category.MetaTitle/@blog.MetaTitle" tabindex="0">
+                                                        <img src="@blog.Image" class="img-fluid" alt="">
+                                                    </a>
+                                                </div>
+                                                <div class="slider-single-post__content">
+                                                    <h3 class="post-title"><a href="/blogs/@blog.Category.MetaTitle/@blog.MetaTitle" tabindex="0">@blog.Title</a></h3>
+                                                    <div class="text2-overflow-dot mb-10">@blog.Content.Substring(0, 72)...</div>
+                                                    <div class="post-meta">
 
-                                                    <p class="post-date"><i class="fa fa-calendar"></i> 03/02/2020</p>
+                                                        <p class="post-date"><i class="fa fa-calendar"></i> @blog.UpdateDate.ToString("dd/MM/yyyy") </p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div><div class="slick-slide slick-active" data-slick-index="1" aria-hidden="false" style="width: 377px;">
-                                    <div>
-                                        <div class="slider-single-post h-100" style="width: 100%; display: inline-block;">
-                                            <div class="slider-single-post__image">
-                                                <a href="/blogs/bao-gia/bao-gia-cua-nhua-loi-thep-nhom-pma-cua-luoi-chong-muoi-13" tabindex="0">
-                                                    <img src="/Upload/blogs/637163274326933249_conca.jpg" class="img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="slider-single-post__content">
-                                                <h3 class="post-title"><a href="/blogs/bao-gia/bao-gia-cua-nhua-loi-thep-nhom-pma-cua-luoi-chong-muoi-13" tabindex="0">Báo giá cửa nhựa lõi thép - Nhôm PMA - cửa lưới chống muỗi</a></h3>
-                                                <div class="text2-overflow-dot mb-10">  Công ty chúng tôi xin chân thành cảm ơn sự hợp tác của...</div>
-                                                <div class="post-meta">
-
-                                                    <p class="post-date"><i class="fa fa-calendar"></i> 03/02/2020</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><div class="slick-slide slick-active" data-slick-index="2" aria-hidden="false" style="width: 377px;">
-                                    <div>
-                                        <div class="slider-single-post h-100" style="width: 100%; display: inline-block;">
-                                            <div class="slider-single-post__image">
-                                                <a href="/blogs/cong-trinh/cong-trinh-cafe-o-3-bis-tran-hung-dao-phuong-3-da-lat-12" tabindex="0">
-                                                    <img src="/Upload/blogs/637137668005589606_d7b2ce1cadb354ed0da2.jpg" class="img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="slider-single-post__content">
-                                                <h3 class="post-title"><a href="/blogs/cong-trinh/cong-trinh-cafe-o-3-bis-tran-hung-dao-phuong-3-da-lat-12" tabindex="0">Công trình cafe ở 3 bis Trần Hưng Đạo, Phường 3, Đà Lạt.</a></h3>
-                                                <div class="text2-overflow-dot mb-10">
-                                                    Bàn giao công trình cafe ở 3 bis Trần Hưng Đạo, Phường 3, Đà Lạt.
-                                                    -Minh...
-                                                </div>
-                                                <div class="post-meta">
-
-                                                    <p class="post-date"><i class="fa fa-calendar"></i> 04/01/2020</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><div class="slick-slide" data-slick-index="3" aria-hidden="true" style="width: 377px;" tabindex="-1">
-                                    <div>
-                                        <div class="slider-single-post h-100" style="width: 100%; display: inline-block;">
-                                            <div class="slider-single-post__image">
-                                                <a href="/blogs/cong-trinh/cong-trinh-dan-dung-to-hien-thanh-phuong-3-da-lat-lam-dong-11" tabindex="-1">
-                                                    <img src="/Upload/blogs/637043423736313820_637043379673188862_f898b83d22c7c5999cd6.jpg" class="img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                            <div class="slider-single-post__content">
-                                                <h3 class="post-title"><a href="/blogs/cong-trinh/cong-trinh-dan-dung-to-hien-thanh-phuong-3-da-lat-lam-dong-11" tabindex="-1">Công trình dân dụng Tô Hiến Thành, Phường 3, Đà Lạt, Lâm Đồng</a></h3>
-                                                <div class="text2-overflow-dot mb-10">-Công trình dân dụng Tô Hiến Thành, Phường 3, Đà Lạt,...</div>
-                                                <div class="post-meta">
-
-                                                    <p class="post-date"><i class="fa fa-calendar"></i> 17/09/2019</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                }
                             </div>
                         </div><button class="slick-next slick-arrow" style="" aria-disabled="false"><i class="ion-ios-arrow-right"></i></button>
                     </div>

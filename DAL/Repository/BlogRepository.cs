@@ -8,25 +8,25 @@ using System.Threading.Tasks;
 
 namespace DAL.Repository
 {
-    class BlogRepository : Repository<News>
+    class BlogRepository : Repository<Blog>
     {
         public BlogRepository(MyDbContext dbProvider) : base(dbProvider)
         {
         }
 
-        protected override DbSet<News> GetDbSet()
+        protected override DbSet<Blog> GetDbSet()
         {
-            return _context.News;
+            return _context.Blogs;
         }
 
-        protected override void MapEntity(News item, News entity, int pUid = 0)
+        protected override void MapEntity(Blog item, Blog entity, int pUid = 0)
         {
             item.CategoryId = entity.CategoryId;
             item.Content = entity.Content;
             item.CreateBy = entity.CreateBy;
             item.CreateDate = entity.CreateDate;
             item.Image = entity.Image;
-            item.Meta = entity.Meta;
+            item.MetaTitle = entity.MetaTitle;
             item.Sort = entity.Sort;
             item.Title = entity.Title;
             item.UpdateBy = entity.UpdateBy;

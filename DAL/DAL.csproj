@@ -62,14 +62,15 @@
     <Compile Include="Entity\BaseEntity.cs" />
     <Compile Include="Entity\Category.cs" />
     <Compile Include="Entity\MyDbContext.cs" />
-    <Compile Include="Entity\News.cs" />
-    <Compile Include="Entity\NewsCategory.cs" />
+    <Compile Include="Entity\Blog.cs" />
+    <Compile Include="Entity\BlogCategory.cs" />
     <Compile Include="Entity\Product.cs" />
     <Compile Include="Entity\ProductImage.cs" />
     <Compile Include="Entity\ProductRelation.cs" />
     <Compile Include="Entity\SysParam.cs" />
     <Compile Include="Entity\SysUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\BlogCategoryRepository.cs" />
     <Compile Include="Repository\BlogRepository.cs" />
     <Compile Include="Repository\CategoryRepository.cs" />
     <Compile Include="Repository\IRepository.cs" />

@@ -15,5 +15,12 @@ namespace BAL.Services.Implement
         public ProductService(IUnitOfWork unitOfWork, IMapper mapper) : base(unitOfWork, mapper)
         {
         }
+
+        public IEnumerable<ProductDto> GetNew()
+        {
+            var res = GetAll(x => x.IsNew == true);
+            
+            return res;
+        }
     }
 }

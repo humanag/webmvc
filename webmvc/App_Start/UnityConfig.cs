@@ -22,6 +22,10 @@ namespace WebMVC
             container.RegisterType<IHomeService, HomeService>();
             container.RegisterType<IProductService, ProductService>();
             container.RegisterType<ICategoryService, CategoryService>();
+            container.RegisterType<IBlogCategoryService, BlogCategoryService>();
+            container.RegisterType<IBlogService, BlogService>();
+            container.RegisterType<IAccountService, AccountService>();
+            container.RegisterType<IParamService, ParamService>();
 
             var mappingConfig = new MapperConfiguration(mc => { mc.AddProfile(new MappingProfile()); });
             IMapper mapper = mappingConfig.CreateMapper();

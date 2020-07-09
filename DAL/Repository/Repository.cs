@@ -54,6 +54,11 @@ namespace DAL.Repository
             return this.DbSet.Find(id);
         }
 
+        public virtual TEntity Get(Func<TEntity, bool> predicate, int pUid = 0)
+        {
+            return this.DbSet.Where(predicate).FirstOrDefault<TEntity>();
+        }
+
         public virtual IEnumerable<TEntity> GetAll(int page = 1, int pageSize = 20, long pUid = 0)
         {
             return this.DbSet;

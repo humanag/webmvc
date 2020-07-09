@@ -24,6 +24,7 @@ namespace BAL.Services.Implement
         {
             var sysParam = (SysParamRepository)_unitOfWork.GetRepository<SysParam>();
             var items = sysParam.GetAll(x => x.Type == 0);
+            // TODO - data demo.
             if (items.Count() < 1)
             {
                 sysParam.Insert(

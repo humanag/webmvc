@@ -49,11 +49,29 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="App_Themes/alula/assets/plugins/magiczoom/magiczoomplus.js">
       <publishTime>07/08/2020 08:49:16</publishTime>
     </File>
+    <File Include="Areas/Admin/Views/Category/Create.cshtml">
+      <publishTime>07/09/2020 20:26:35</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Category/Details.cshtml">
+      <publishTime>07/09/2020 23:13:05</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Category/Edit.cshtml">
+      <publishTime>07/09/2020 23:09:32</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Category/Index.cshtml">
+      <publishTime>07/09/2020 23:09:44</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Default/Index.cshtml">
+      <publishTime>07/09/2020 18:43:43</publishTime>
+    </File>
     <File Include="Areas/Admin/Views/Login/Index.cshtml">
       <publishTime>07/08/2020 09:06:08</publishTime>
     </File>
+    <File Include="Areas/Admin/Views/Setting/Index.cshtml">
+      <publishTime>07/09/2020 22:57:03</publishTime>
+    </File>
     <File Include="Areas/Admin/Views/Shared/_Layout.cshtml">
-      <publishTime>07/08/2020 09:06:00</publishTime>
+      <publishTime>07/09/2020 22:55:18</publishTime>
     </File>
     <File Include="Areas/Admin/Views/web.config">
       <publishTime>07/08/2020 08:56:04</publishTime>
@@ -71,19 +89,19 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/01/2020 16:00:54</publishTime>
     </File>
     <File Include="bin/BAL.dll">
-      <publishTime>07/09/2020 07:16:41</publishTime>
+      <publishTime>07/09/2020 23:13:57</publishTime>
     </File>
     <File Include="bin/BAL.pdb">
-      <publishTime>07/09/2020 07:16:41</publishTime>
+      <publishTime>07/09/2020 23:13:57</publishTime>
     </File>
     <File Include="bin/DAL.dll">
-      <publishTime>07/09/2020 07:16:41</publishTime>
+      <publishTime>07/09/2020 23:13:56</publishTime>
     </File>
     <File Include="bin/DAL.dll.config">
       <publishTime>07/09/2020 07:41:19</publishTime>
     </File>
     <File Include="bin/DAL.pdb">
-      <publishTime>07/09/2020 07:16:41</publishTime>
+      <publishTime>07/09/2020 23:13:56</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>04/16/2020 20:38:42</publishTime>
@@ -299,10 +317,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>01/23/2014 13:57:34</publishTime>
     </File>
     <File Include="bin/WebMVC.dll">
-      <publishTime>07/09/2020 07:47:06</publishTime>
+      <publishTime>07/09/2020 23:13:58</publishTime>
     </File>
     <File Include="bin/WebMVC.pdb">
-      <publishTime>07/09/2020 07:47:06</publishTime>
+      <publishTime>07/09/2020 23:13:58</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css">
       <publishTime>07/08/2020 08:48:18</publishTime>
@@ -406,8 +424,11 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     <File Include="Scripts/modernizr-2.8.3.js">
       <publishTime>07/08/2020 08:48:22</publishTime>
     </File>
+    <File Include="Views/Account/Login.cshtml">
+      <publishTime>07/09/2020 17:40:47</publishTime>
+    </File>
     <File Include="Views/Blogs/Index.cshtml">
-      <publishTime>07/08/2020 09:24:31</publishTime>
+      <publishTime>07/09/2020 12:27:41</publishTime>
     </File>
     <File Include="Views/Home/About.cshtml">
       <publishTime>07/07/2020 20:29:59</publishTime>
@@ -416,10 +437,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/08/2020 00:38:14</publishTime>
     </File>
     <File Include="Views/Home/Index.cshtml">
-      <publishTime>07/08/2020 13:16:43</publishTime>
+      <publishTime>07/09/2020 15:38:03</publishTime>
     </File>
     <File Include="Views/Products/Index.cshtml">
-      <publishTime>07/09/2020 07:15:53</publishTime>
+      <publishTime>07/09/2020 08:29:51</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>07/08/2020 08:48:14</publishTime>
@@ -428,7 +449,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>07/08/2020 09:23:51</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>07/08/2020 13:39:07</publishTime>
+      <publishTime>07/09/2020 22:03:56</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>07/09/2020 07:25:27</publishTime>

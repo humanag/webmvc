@@ -19,6 +19,20 @@ namespace DAL.Repository
             return _context.SysParams;
         }
 
+        public override bool Update(object id, SysParam entity, int pUid = 0)
+        {
+            if (id != null)
+                return base.Update(id, entity, pUid);
+
+            var item = this.DbSet.FirstOrDefault(x => x.Code == entity.Name && x.Type == entity.Type);
+            if (item != null)
+                MapEntity(item, entity);
+            else
+                this.DbSet.Add(entity);
+            
+            return true;
+        }
+
         protected override void MapEntity(SysParam item, SysParam entity, int pUid = 0)
         {
             item.Name = entity.Name;

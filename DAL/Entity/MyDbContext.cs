@@ -13,8 +13,8 @@ namespace DAL.Entity
         }
 
         public virtual DbSet<Category> Categories { get; set; }
-        public virtual DbSet<News> News { get; set; }
-        public virtual DbSet<NewsCategory> NewsCategories { get; set; }
+        public virtual DbSet<Blog> Blogs { get; set; }
+        public virtual DbSet<BlogCategory> BlogCategories { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductImage> ProductImages { get; set; }
         public virtual DbSet<ProductRelation> ProductRelations { get; set; }
@@ -23,7 +23,7 @@ namespace DAL.Entity
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<News>()
+            modelBuilder.Entity<Blog>()
                 .Property(e => e.Image)
                 .IsUnicode(false);
 

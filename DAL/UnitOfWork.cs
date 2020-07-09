@@ -49,7 +49,7 @@ namespace DAL
             if (!_repositories.ContainsKey(type))
                 switch (type.ToString())
                 {
-                    case "DAL.Entity.User":
+                    case "DAL.Entity.SysUser":
                         _repositories[type] = new UserRepository(Context);
                         break;
                     case "DAL.Entity.Category":
@@ -57,6 +57,12 @@ namespace DAL
                         break;
                     case "DAL.Entity.Product":
                         _repositories[type] = new ProductRepository(Context);
+                        break;
+                    case "DAL.Entity.Blog":
+                        _repositories[type] = new BlogRepository(Context);
+                        break;
+                    case "DAL.Entity.BlogCategory":
+                        _repositories[type] = new BlogCategoryRepository(Context);
                         break;
                     default:
                         _repositories[type] = new SysParamRepository(Context);

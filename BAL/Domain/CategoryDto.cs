@@ -1,11 +1,16 @@
-namespace BAL.Domain
+﻿namespace BAL.Domain
 {
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.ComponentModel;
 
     public class CategoryDto : BaseDto
     {
+        [DisplayName("Tên nhóm")]
         public string Name { get; set; }
 
+        [DisplayName("Liên kết")]
         public string MetaTitle { get; set; }
 
         public long? ParentId { get; set; }
@@ -13,6 +18,8 @@ namespace BAL.Domain
         public bool? Visible { get; set; }
 
         public int? Sort { get; set; }
+
+        public virtual ICollection<ProductDto> Products { get; set; }
     }
 
     public class CategorySmallDto : BaseDto

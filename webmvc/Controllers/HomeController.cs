@@ -9,12 +9,22 @@ namespace WebMVC.Controllers
 {
     public class HomeController : BaseController
     {
-        public HomeController(ICategoryService category, IHomeService homeService) : base(category, homeService)
+        private IProductService _product;
+        private IBlogService _blog;
+        public HomeController(IBlogService blog, IProductService product, 
+            ICategoryService category, IHomeService homeService) : base(category, homeService)
         {
+            _product = product;
+            _blog = blog;
         }
 
         public ActionResult Index()
         {
+            var prodNews = _product.GetNew();
+            ViewBag.ProductNew = prodNews;
+
+            var blogs = _blog.GetAll(1, 5);
+            ViewBag.Blogs = blogs;
             return View();
         }
 

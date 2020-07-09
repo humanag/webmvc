@@ -1,8 +1,12 @@
 ﻿@using WebMVC.Extensions
+@using BAL.Common
+@using BAL.Models
 @*@model MvcSiteMapProvider.Web.Html.Models.SiteMapPathHelperModel
-@using System.Web.Mvc.Html
-@using MvcSiteMapProvider.Web.Html.Models*@
-
+    @using System.Web.Mvc.Html
+    @using MvcSiteMapProvider.Web.Html.Models*@
+@{
+    var session = (LoginUser)Session[Constants.USER_SESSION];
+}
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,20 +48,20 @@
                             <!--=======  header top dropdown container  =======-->
 
                             <div class="headertop-dropdown-container justify-content-center justify-content-md-end">
-                                <div class="header-top-single-dropdown">
-                                    <a href="javascript:void(0)" class="active-dropdown-trigger" id="user-options">Tài Khoản <i class="ion-ios-arrow-down"></i></a>
-                                    <!--=======  dropdown menu items  =======-->
-
-                                    <div class="header-top-single-dropdown__dropdown-menu-items deactive-dropdown-menu extra-small-mobile-fix">
-                                        <ul>
-                                            <li><a href="/account/login">Đăng Nhập</a></li>
-                                        </ul>
-                                    </div>
-
-                                    <!--=======  End of dropdown menu items  =======-->
-                                </div>
-
-
+                                @if (session == null)
+                                {
+                                    @Html.ActionLink("Đăng nhập", "Login", "Account")
+                                }
+                                else
+                                {
+                                    <span>@session.FullName</span>
+                                    using (Html.BeginForm("Logout", "Account", new { area = "" }, FormMethod.Post, new { @id = "frmLogout" }))
+                                    {
+                                        <a class="nav-link" data-widget="control-sidebar1" data-slide="true" href="#" role="button" onclick="document.getElementById('frmLogout').submit(); return false;">
+                                            <i class="fas fa-sign-out-alt"></i>
+                                        </a>
+                                    }
+                                }
                             </div>
 
                             <!--=======  End of header top dropdown container  =======-->
@@ -182,11 +186,9 @@
         </div>
     </div>
     <!--====================  End of breadcrumb area  ====================-->
-    
     <!-- Start Content -->
     @RenderBody()
     <!-- End Content -->
-
     <!--====================  footer area ====================-->
     <div class="footer-area border-top">
         <div class="container">

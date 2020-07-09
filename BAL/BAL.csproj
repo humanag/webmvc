@@ -35,6 +35,7 @@
       <HintPath>..\packages\AutoMapper.10.0.0\lib\net461\AutoMapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,11 +45,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Constants.cs" />
     <Compile Include="Domain\BaseDto.cs" />
     <Compile Include="Domain\CategoryDto.cs" />
+    <Compile Include="Domain\BlogDto.cs" />
+    <Compile Include="Domain\BlogCategoryDto.cs" />
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Domain\ProductDto.cs" />
     <Compile Include="Domain\SiteInfoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IBlogCategoryService.cs" />
+    <Compile Include="Services\IBlogService.cs" />
+    <Compile Include="Services\IAccountService.cs" />
+    <Compile Include="Services\Implement\ParamService.cs" />
+    <Compile Include="Services\IParamService.cs" />
+    <Compile Include="Services\Implement\BlogCategoryService .cs" />
+    <Compile Include="Services\Implement\BlogService.cs" />
+    <Compile Include="Services\Implement\AccountService.cs" />
     <Compile Include="Services\Implement\ProductService.cs" />
     <Compile Include="Services\IProductService.cs" />
     <Compile Include="Services\IHomeService.cs" />

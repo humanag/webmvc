@@ -1,31 +1,61 @@
-﻿@model IEnumerable<WebMVC.Models.BlogModels>
+﻿@model IEnumerable<BAL.Domain.BlogDto>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Công trình";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th></th>
-    </tr>
+<div class="container mb-5">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="side-bar">
+                <div class="list-group mb-40">
+                    <div class="list-group-item disabled list-group-title"><i class="fa fa-bars fa-fw"></i> Danh Mục Bài Viết</div>
+                    @foreach (var item in ViewBag.BlogCategory)
+                    {
+                        <a href="/blogs?cat=@item.Id" class="list-group-item list-group-item-action active"><i class="fa fa-angle-right fa-fw"></i>@item.Name (@item.Blogs.Count)</a>
+                    }
+                </div>
 
-@if (Model != null)
-{
-    foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-    }
-}
 
-</table>
+            </div>
+        </div>
+
+        <div class="col-lg-9">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-md-6 col-lg-6 mb-4">
+                        <a class="card shadow-sm h-100" href="/blogs/@item.Category.MetaTitle/@item.MetaTitle">
+                            <img src="@item.Image" class="card-img-top img-fluid">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between flex-column h-100">
+                                    <div>
+                                        <h6 class="violet font-weight-bold text-uppercase">@item.Category.Name</h6>
+                                        <h5 class="card-title text2-overflow-dot text-dark">@item.Title</h5>
+                                        <div class="card-text text-secondary">
+                                            @item.Content.Substring(0, 72)... 
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <div class="btn btn-danger btn-sm shadow-sm text-uppercase">Xem thêm...</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            </div>
+
+
+            @*<div>
+                <div class="mb-2">
+                </div>
+                <div class="pagination-container"><ul class="pagination"><li class="page-item active"><span class="page-link">1</span></li><li class="page-item"><a class="page-link" href="/blogs?page=2&amp;cat=1">2</a></li><li class="page-item PagedList-skipToNext"><a class="page-link" href="/blogs?page=2&amp;cat=1" rel="next">&gt;</a></li></ul></div>
+            </div>*@
+
+        </div>
+    </div>
+
+
+</div>
